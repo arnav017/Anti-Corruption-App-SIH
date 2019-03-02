@@ -24,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class CurrentPolicyFragment extends Fragment {
+public class PastPolicyFragment extends Fragment {
 
     RecyclerView recyclerView;
     ArrayList<Policy> policyArrayList;
@@ -53,7 +53,7 @@ public class CurrentPolicyFragment extends Fragment {
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        policyReference = databaseReference.child("policies").child("currrent");
+        policyReference = databaseReference.child("policies").child("past");
 
         policyReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -61,7 +61,7 @@ public class CurrentPolicyFragment extends Fragment {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
 
-                    policyArrayList = new PolicyParser().parsePolicies((Map<String,Object>) dataSnapshot.getValue());
+                policyArrayList = new PolicyParser().parsePolicies((Map<String,Object>) dataSnapshot.getValue());
                 recyclerView.setAdapter(new PolicyAdapter(policyArrayList));
             }
 
