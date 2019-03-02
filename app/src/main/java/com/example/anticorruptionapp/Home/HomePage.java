@@ -1,10 +1,8 @@
 package com.example.anticorruptionapp.Home;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -16,17 +14,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.anticorruptionapp.Profile.ProfilePage;
 import com.example.anticorruptionapp.R;
 
 public class HomePage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , CurrentPolicies.OnFragmentInteractionListener ,
 PastPolicies.OnFragmentInteractionListener , Issues.OnFragmentInteractionListener{
 
+    ImageView profilePic , editProfile;
+    TextView name;
+    TextView email;
+    View header;
+    NavigationView navigationView;
+    Presenter presenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        initViews();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.policies);
         setSupportActionBar(toolbar);
@@ -38,8 +48,16 @@ PastPolicies.OnFragmentInteractionListener , Issues.OnFragmentInteractionListene
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        header = navigationView.getHeaderView(0);
+        profilePic = header.findViewById(R.id.imageView);
+        name = header.findViewById(R.id.name);
+        email = header.findViewById(R.id.email);
+        editProfile = header.findViewById(R.id.edit_profile);
+
+        presenter = new Presenter(this);
+        presenter.setHeader();
 
         final TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText(R.string.current_policies));
@@ -68,9 +86,17 @@ PastPolicies.OnFragmentInteractionListener , Issues.OnFragmentInteractionListene
 
             }
         });
+
+        editProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this , ProfilePage.class));
+            }
+        });
     }
 
     public void initViews(){
+
 
     }
 
