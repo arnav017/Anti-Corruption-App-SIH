@@ -1,11 +1,28 @@
 package com.example.anticorruptionapp.Profile;
 
 public class Model {
-    String key , contact , name , email , designation , home_address , home_district , work_address , work_district ;
-    String image_uri;
+    private String key , contact , name , email , designation , home_address , home_district , work_address , work_district ,
+            home_state , work_state ;
+    private String image_uri;
 
     public String getKey() {
         return key;
+    }
+
+    public String getHome_state() {
+        return home_state;
+    }
+
+    public void setHome_state(String home_state) {
+        this.home_state = home_state;
+    }
+
+    public String getWork_state() {
+        return work_state;
+    }
+
+    public void setWork_state(String work_state) {
+        this.work_state = work_state;
     }
 
     public void setKey(String key) {
