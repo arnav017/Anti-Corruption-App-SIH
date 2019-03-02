@@ -69,17 +69,21 @@ public class Sign_Up extends AppCompatActivity {
         mListStateView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                state.setText((String) adapterView.getItemAtPosition(i));
-               mListStateView.setVisibility(View.GONE);
+               String s="";
+               s=(String)adapterView.getItemAtPosition(i);
+               state.setText(s);
                mListDistrict.clear();
                DisplayListDistrict.clear();
                districtArrayAdapter.notifyDataSetChanged();
                 try {
-                    fillDistrictList( (String) adapterView.getItemAtPosition(i));
+                    fillDistrictList(s);
                     //Toast.makeText(Sign_Up.this,(String) adapterView.getItemAtPosition(i),Toast.LENGTH_LONG).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                DisplayList.clear();
+                stringArrayAdapter.notifyDataSetChanged();
+                mListStateView.setVisibility(View.GONE);
                 mListDistrictView.setVisibility(View.VISIBLE);
             }
         });
