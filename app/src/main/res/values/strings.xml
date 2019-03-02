@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AntiCorruptionApp</string>
+    <string name="Name_Sign_up">Name</string>
+    <string name="Mobile_No_Sign_up">Mobile No.</string>
+    <string name="Address_Sign_up">Address</string>
+    <string name="State_Sign_up">State</string>
+    <string name="District_Sign_up">District</string>
 </resources>
