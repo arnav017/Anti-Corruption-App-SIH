@@ -1,27 +1,8 @@
 <resources>
     <string name="app_name">AntiCorruptionApp</string>
-    <string name="title_activity_home_page">HomePage</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="policies">Policies</string>
-    <string name="current_policies">Current Policies</string>
-    <string name="past_policies">Past Policies</string>
-    <string name="issues">Issues</string>
-    <string name="name">Name</string>
-    <string name="contact">Contact</string>
-    <string name="address">Address</string>
-    <string name="home_address">Home Address</string>
-    <string name="work_address">Work Address</string>
-    <string name="state">State</string>
-    <string name="district">District</string>
-    <string name="email">Email id</string>
-    <string name="designation">Designation</string>
-    <string name="registered_mobile_no">Registered Mobile Number</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Name_Sign_up">Name</string>
+    <string name="Mobile_No_Sign_up">Mobile No.</string>
+    <string name="Address_Sign_up">Address</string>
+    <string name="State_Sign_up">State</string>
+    <string name="District_Sign_up">District</string>
 </resources>
