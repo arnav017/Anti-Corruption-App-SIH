@@ -7,5 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Home.HomePage"
     tools:showIn="@layout/app_bar_home_page">
+    <include
+        layout="@layout/tab_fragment_layout"/>
 
 </android.support.constraint.ConstraintLayout>
