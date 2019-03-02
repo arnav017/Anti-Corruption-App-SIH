@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.anticorruptionapp.Fragment.ItemFragment;
+import com.example.anticorruptionapp.Home.HomePage;
 import com.example.anticorruptionapp.data.RecentData;
 
+public class MainActivity extends AppCompatActivity implements Runnable{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
