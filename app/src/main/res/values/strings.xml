@@ -26,4 +26,5 @@
     <string name="email">Email id</string>
     <string name="designation">Designation</string>
     <string name="registered_mobile_no">Registered Mobile Number</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
