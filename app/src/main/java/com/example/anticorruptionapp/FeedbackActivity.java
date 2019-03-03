@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.anticorruptionapp.R;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -111,6 +112,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                     if (response != null) {
                         Sentiment sent = response.getDocumentSentiment();
                         Log.e("xxx",response.toString());
+                        Toast.makeText(FeedbackActivity.this,response.toString(),Toast.LENGTH_LONG).show();
                         sentiment.setText("Score : " + sent.getScore() + " Magnitude : " + sent.getMagnitude());
                     }
                 }
