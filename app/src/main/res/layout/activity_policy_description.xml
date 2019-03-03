@@ -39,7 +39,12 @@
         android:id="@+id/policy_des"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:text="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"
+        android:text="Objective:-
+Imparting skill training to undergraduate, focussing on improved curricula, training to use academic knowledge to solve aptitude related high order questions asked in GATE examination.
+Targeted Beneficiary:-
+currently under graduating ,any candidate seeking admissions in IITs for masters, Seeking jobs in PSUs, etc.
+
+"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +66,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="10dp"
-            android:onClick="onClick"
             android:text="1"/>
 
         <Button
@@ -70,7 +74,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="10dp"
-            android:onClick="onClick1"
             android:text="2"/>
 
         <Button
@@ -79,7 +82,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="10dp"
-            android:onClick="onClick1"
             android:text="3"/>
 
         <Button
@@ -88,7 +90,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="10dp"
-            android:onClick="onClick1"
             android:text="4"/>
 
         <Button
@@ -97,7 +98,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="10dp"
-            android:onClick="onClick1"
             android:text="5"/>
 <!--
         <ImageView
