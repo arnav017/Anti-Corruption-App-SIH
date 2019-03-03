@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.anticorruptionapp.Associated_Policies.AssociatedPolicies;
 import com.example.anticorruptionapp.Profile.ProfilePage;
 import com.example.anticorruptionapp.R;
 
@@ -138,18 +139,8 @@ PastPolicies.OnFragmentInteractionListener , Issues.OnFragmentInteractionListene
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.ass_polies) {
+            startActivity(new Intent(HomePage.this , AssociatedPolicies.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

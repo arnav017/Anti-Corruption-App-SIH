@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements Runnable {
             e.printStackTrace();
         }
         finish();
-        startActivity(new Intent(MainActivity.this , StartActivity.class));
+        startActivity(new Intent(MainActivity.this , HomePage.class));
     }
 
 }
