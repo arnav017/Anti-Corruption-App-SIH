@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.anticorruptionapp.FeedbackActivity;
 import com.example.anticorruptionapp.R;
 import com.example.anticorruptionapp.data.Policy;
 
@@ -38,7 +39,7 @@ public class PolicyAdapter extends RecyclerView.Adapter<PolicyAdapter.PolicyView
         policyViewHolder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(context, TreeActivity.class);
+                Intent in = new Intent(context, FeedbackActivity.class);
                 context.startActivity(in);
             }
         });
