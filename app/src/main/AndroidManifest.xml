@@ -32,6 +32,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignIn"></activity>
+        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".Home.HomePage"></activity>
+        <activity android:name=".Profile.ProfilePage"></activity>
     </application>
 
 </manifest>

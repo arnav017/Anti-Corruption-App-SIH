@@ -24,6 +24,8 @@ public class Presenter {
     public void setProfile(Model model){
         FirebaseDatabase.getInstance().getReference("users").child("profiles").child(model.getContact())
                 .setValue(model);
+        context.progressBar.setVisibility(View.GONE);
+        context.finish();
     }
 
     public void preFillprofile(){
@@ -37,6 +39,7 @@ public class Presenter {
                             context.progressBar.setVisibility(View.GONE);
                             if(model != null) {
                                 if(model.getImage_uri() != null){
+                                    context.resultUri = Uri.parse(model.getImage_uri());
                                     Glide.with(context).load(Uri.parse(model.getImage_uri()))
                                             .override(130,130).centerCrop().into(context.profile_image);
                                 }
@@ -72,6 +75,14 @@ public class Presenter {
                                     context.work_district.setText(model.getWork_district());
                                 else
                                     context.work_district.setText(R.string.district);
+                                if (model.getHome_state() != null)
+                                    context.home_state.setText(model.getHome_state());
+                                else
+                                    context.home_state.setText(R.string.state);
+                                if (model.getWork_state() != null)
+                                    context.work_state.setText(model.getWork_state());
+                                else
+                                    context.work_state.setText(R.string.state);
                             }
                         }
                         else {
@@ -84,6 +95,8 @@ public class Presenter {
                             context.home_district.setText(R.string.district);
                             context.work_address.setText(R.string.work_address);
                             context.work_district.setText(R.string.district);
+                            context.work_state.setText(R.string.state);
+                            context.home_state.setText(R.string.state);
                         }
                         context.profile_container.setClickable(true);
                     }

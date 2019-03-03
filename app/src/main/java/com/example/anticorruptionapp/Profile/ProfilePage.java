@@ -24,6 +24,7 @@ public class ProfilePage extends AppCompatActivity {
 
     CircleImageView profile_image , change_image;
     EditText name , email , designation , contact , home_address , home_district , work_address , work_district;
+    EditText home_state , work_state;
     ImageView done;
     Uri uri , resultUri;
     private static final int GALLERY_INTENT=10;
@@ -42,6 +43,7 @@ public class ProfilePage extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 Model model = new Model();
                 String mName = name.getText().toString();
                 String mEmail = email.getText().toString();
@@ -51,6 +53,8 @@ public class ProfilePage extends AppCompatActivity {
                 String mHomeDistrict = home_district.getText().toString();
                 String mWorkAddress = work_address.getText().toString();
                 String mWorkDistrict = work_district.getText().toString();
+                String mHomeState = home_state.getText().toString();
+                String mWorkState = work_state.getText().toString();
 
                 model.setName(mName);
                 model.setEmail(mEmail);
@@ -60,11 +64,15 @@ public class ProfilePage extends AppCompatActivity {
                 model.setHome_district(mHomeDistrict);
                 model.setWork_address(mWorkAddress);
                 model.setWork_district(mWorkDistrict);
-                model.setImage_uri(resultUri.toString());
+                model.setHome_state(mHomeState);
+                model.setWork_state(mWorkState);
+                if(resultUri != null)
+                    model.setImage_uri(resultUri.toString());
 
                 if(!TextUtils.isEmpty(mName) && !TextUtils.isEmpty(mEmail) && !TextUtils.isEmpty(mDesignation) &&
                 !TextUtils.isEmpty(mContact) && !TextUtils.isEmpty(mHomeAddress) && !TextUtils.isEmpty(mHomeDistrict)
-                && !TextUtils.isEmpty(mWorkAddress) && !TextUtils.isEmpty(mWorkDistrict)){
+                && !TextUtils.isEmpty(mWorkAddress) && !TextUtils.isEmpty(mWorkDistrict)
+                && !TextUtils.isEmpty(mHomeState) && !TextUtils.isEmpty(mWorkState)){
                     presenter.setProfile(model);
                 }
                 else{
@@ -82,6 +90,10 @@ public class ProfilePage extends AppCompatActivity {
                         work_address.setError("Please fill your work address");
                     else if(TextUtils.isEmpty(mWorkDistrict))
                         work_district.setError("Please fill your work district");
+                    else if(TextUtils.isEmpty(mHomeState))
+                        home_state.setError("Please fill your home state");
+                    else if(TextUtils.isEmpty(mWorkState))
+                        work_state.setError("Please fill your work state");
 
                 }
 
@@ -115,6 +127,8 @@ public class ProfilePage extends AppCompatActivity {
         done = findViewById(R.id.done);
         progressBar = findViewById(R.id.progressBar);
         profile_container = findViewById(R.id.profile_container);
+        home_state = findViewById(R.id.home_state);
+        work_state = findViewById(R.id.work_state);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
