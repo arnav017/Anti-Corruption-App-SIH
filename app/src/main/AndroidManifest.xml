@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".PolicyDescriptionActivity"></activity>
+        <activity android:name=".FeedbackActivity" />
         <activity android:name=".Home.TreeActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
@@ -24,11 +25,10 @@
         <activity
             android:name=".Profile.ProfilePage"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Sign_Up">
-        </activity>
+        <activity android:name=".Sign_Up"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />666666666666666666
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.anticorruptionapp.R;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.services.language.v1.CloudNaturalLanguage;
@@ -28,6 +27,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class FeedbackActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,27 +36,31 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
 
     public static final String API_KEY = "AIzaSyCBSWAhQezzANe1yfzZAdVEE9S-OfDo2XY";
 
-
-
     Button analyze;
     TextView sentiment;
-    RecyclerView recyclerView;
+    RecyclerView entities;
     EditText docText;
 
+    EntityListAdapter entityListAdapter;
     private List<Entity> entityList;
 
     private CloudNaturalLanguage naturalLanguageService;
     private Document document;
+
     private Features features;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
 
         analyze = findViewById(R.id.analyze);
         sentiment = findViewById(R.id.sentiment);
+        entities = findViewById(R.id.entity);
         docText = findViewById(R.id.docText);
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
 
         naturalLanguageService = new CloudNaturalLanguage.Builder(
                 AndroidHttp.newCompatibleTransport(),
@@ -79,6 +84,10 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
         request.setDocument(document);
         request.setFeatures(features);
 
+        entityList = new ArrayList<>();
+        entityListAdapter = new EntityListAdapter(entityList);
+        entities.setAdapter(entityListAdapter);
+        entities.setLayoutManager(new LinearLayoutManager(this));
 
         analyze.setOnClickListener(this);
     }
@@ -99,6 +108,7 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                     AnnotateTextResponse response = null;
                     try {
                         response = naturalLanguageService.documents().annotateText(request).execute();
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -110,6 +120,8 @@ public class FeedbackActivity extends AppCompatActivity implements View.OnClickL
                     super.onPostExecute(response);
                     if (response != null) {
                         Sentiment sent = response.getDocumentSentiment();
+                        entityList.addAll(response.getEntities());
+                        entityListAdapter.notifyDataSetChanged();
                         Log.e("xxx",response.toString());
                         sentiment.setText("Score : " + sent.getScore() + " Magnitude : " + sent.getMagnitude());
                     }
