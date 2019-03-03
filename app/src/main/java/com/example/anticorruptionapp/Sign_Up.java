@@ -62,9 +62,9 @@ public class Sign_Up extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         state = findViewById(R.id.edtState);
         district=findViewById(R.id.edtDistrict);
-        contact=findViewById(R.id.edtPhoneNo);
+        //contact=findViewById(R.id.edtPhoneNo);
         name=findViewById(R.id.edtName);
-        address=findViewById(R.id.edtAddress);
+        //address=findViewById(R.id.edtAddress);
         mListStateView = findViewById(R.id.state_list);
         mListDistrictView=findViewById(R.id.district_list);
         database=FirebaseDatabase.getInstance();

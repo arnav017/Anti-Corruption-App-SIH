@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Associated_Policies.AssociatedPolicies"></activity>
         <activity android:name=".PolicyDescriptionActivity"></activity>
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".Home.TreeActivity" />
@@ -25,17 +26,16 @@
         <activity
             android:name=".Profile.ProfilePage"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Sign_Up"></activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignIn"></activity>
-        <activity android:name=".StartActivity"></activity>
-        <activity android:name=".Home.HomePage"></activity>
-        <activity android:name=".Profile.ProfilePage"></activity>
+        <activity android:name=".SignIn" />
+        <activity android:name=".StartActivity" />
     </application>
 
 </manifest>

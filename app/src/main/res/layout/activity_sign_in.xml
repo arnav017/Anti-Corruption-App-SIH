@@ -1,66 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:layout_marginTop="40dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding"
+    android:layout_margin="@dimen/margin"
+    android:background="@color/white">
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phone Number"
+            android:hint="@string/contact"
             android:inputType="number"
-            android:textColorHint="@android:color/black"
-            android:textSize="34sp"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="@dimen/normal_text"
             app:met_baseColor="@android:color/black"
             app:met_floatingLabel="highlight"
             app:met_maxCharacters="10"
-            app:met_primaryColor="@android:color/black"
-            app:met_singleLineEllipsis="true" />
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_singleLineEllipsis="true"
+            android:layout_marginTop="40dp"/>
 
         <Button
             android:id="@+id/buttonGetVerificationCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="40dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/margin"
             android:shadowColor="@android:color/black"
-            android:text="Sent Verification Code" />
+            android:text="@string/send_code" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Code"
+            android:hint="@string/enter_code"
             android:id="@+id/edtOtp"
-            android:textColorHint="@android:color/black"
-            android:textSize="34sp"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="@dimen/normal_text"
             android:inputType="number"
-            app:met_baseColor="@android:color/black"
+            app:met_baseColor="@color/black"
             app:met_floatingLabel="highlight"
             app:met_maxCharacters="10"
             app:met_primaryColor="@android:color/black"
-            app:met_singleLineEllipsis="true"
-            />
+            app:met_singleLineEllipsis="true" />
         <Button
             android:id="@+id/btnSignIn"
-            android:layout_marginRight="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/linearLayout"
-            android:layout_below="@+id/linearLayout"
-            android:layout_marginTop="46dp"
+            android:layout_marginTop="@dimen/margin"
             android:shadowColor="@android:color/black"
-            android:text="Sign In"
-            />
+            android:text="@string/sign_in"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white" />
     </LinearLayout>
-</RelativeLayout>

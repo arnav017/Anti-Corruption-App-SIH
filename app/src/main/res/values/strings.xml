@@ -27,4 +27,7 @@
     <string name="designation">Designation</string>
     <string name="registered_mobile_no">Registered Mobile Number</string>
     <string name="sign_up">Sign Up</string>
+    <string name="send_code">Send verification code</string>
+    <string name="enter_code">Enter Code</string>
+    <string name="sign_in">Sign In</string>
 </resources>
