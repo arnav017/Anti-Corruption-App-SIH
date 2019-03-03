@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+    }
 }
 
 dependencies {
@@ -38,6 +41,22 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.google.firebase:firebase-database:16.0.6'
     implementation 'com.google.firebase:firebase-core:16.0.7'
+
+    //google api integration
+    implementation group: 'com.google.apis', name: 'google-api-services-language', version: 'v1-rev388-1.22.0' exclude module: 'httpclient'
+    implementation group: 'com.google.api-client', name: 'google-api-client-android', version: '1.22.0' exclude module: 'httpclient'
+
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.jakewharton:butterknife:8.7.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
 }
 apply plugin: 'com.google.gms.google-services'

@@ -27,5 +27,4 @@ public class MainActivity extends AppCompatActivity implements Runnable {
         finish();
         startActivity(new Intent(MainActivity.this , StartActivity.class));
     }
-
 }
